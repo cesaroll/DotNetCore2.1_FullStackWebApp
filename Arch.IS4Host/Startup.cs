@@ -4,6 +4,8 @@
 
 using Arch.IS4Host.Data;
 using Arch.IS4Host.Models;
+using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.EntityFramework.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -11,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
 using System.Reflection;
 
 namespace Arch.IS4Host
@@ -85,6 +88,8 @@ namespace Arch.IS4Host
 
         public void Configure(IApplicationBuilder app)
         {
+            InitializeDatabase(app);
+
             if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -98,6 +103,48 @@ namespace Arch.IS4Host
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();
+        }
+
+        private void InitializeDatabase(IApplicationBuilder app) {
+
+            // Using a services scope
+            using(var svcScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                // Create PersistedGrant Database (we are using single db)
+                // If it does not exist, and run outstanding migrations.
+                var persistedGrantDbContext = svcScope.ServiceProvider.GetRequiredService<PersistedGrantDbContext>();
+                persistedGrantDbContext.Database.Migrate();
+
+                // Create IS4 Configuration Database (using a single db here)
+                // if it does not exist, and run outstanding migrations
+                var configDbContext = svcScope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
+                configDbContext.Database.Migrate();
+
+                // Generating Client records
+                if(!configDbContext.Clients.Any()){
+                    foreach(var client in Config.GetClients()) {
+                        configDbContext.Clients.Add(client.ToEntity());
+                    }
+                    configDbContext.SaveChanges();
+                }
+
+                // Generating IdentityResources records
+                if(!configDbContext.IdentityResources.Any()){
+                    foreach(var res in Config.GetIdentityResources()) {
+                        configDbContext.IdentityResources.Add(res.ToEntity());
+                    }
+                    configDbContext.SaveChanges();
+                }
+
+                // Generate ApiResources records
+                if(!configDbContext.ApiResources.Any()){
+                    foreach(var api in Config.GetApis()) {
+                        configDbContext.ApiResources.Add(api.ToEntity());
+                    }
+                    configDbContext.SaveChanges();
+                }
+
+            }
         }
     }
 }

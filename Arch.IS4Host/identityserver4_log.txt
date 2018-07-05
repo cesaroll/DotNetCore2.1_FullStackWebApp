@@ -28,3 +28,45 @@
 2018-07-04 17:33:15.760 -06:00 [DBG] Using Identity.External as default scheme for sign-out
 2018-07-04 17:33:15.760 -06:00 [DBG] Using Identity.Application as default scheme for challenge
 2018-07-04 17:33:15.761 -06:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-07-05 14:10:01.588 -06:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-07-05 14:10:01.625 -06:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-07-05 14:10:01.627 -06:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-07-05 14:10:01.628 -06:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-07-05 14:10:01.629 -06:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-07-05 14:47:28.152 -06:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-07-05 14:47:28.187 -06:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-07-05 14:47:28.188 -06:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-07-05 14:47:28.189 -06:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-07-05 14:47:28.190 -06:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-07-05 14:48:27.045 -06:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-07-05 14:48:27.068 -06:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-07-05 14:48:27.070 -06:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-07-05 14:48:27.075 -06:00 [DBG] Start discovery request
+2018-07-05 14:48:27.625 -06:00 [DBG] Found ["openid","profile","api1"] as all scopes in database
+2018-07-05 14:48:51.420 -06:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-07-05 14:48:51.423 -06:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-07-05 14:48:51.424 -06:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-07-05 14:48:51.426 -06:00 [DBG] Start discovery request
+2018-07-05 14:48:51.439 -06:00 [DBG] Found ["openid","profile","api1"] as all scopes in database
+2018-07-05 14:52:12.908 -06:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2018-07-05 14:52:12.911 -06:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2018-07-05 14:52:12.913 -06:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2018-07-05 14:52:12.915 -06:00 [DBG] Start discovery request
+2018-07-05 14:52:12.921 -06:00 [DBG] Found ["openid","profile","api1"] as all scopes in database
+2018-07-05 14:53:01.717 -06:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2018-07-05 14:53:38.472 -06:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-07-05 14:53:38.696 -06:00 [WRN] Invalid password for user 155b7949-1423-4009-aa3b-431a3ddb26ab.
+2018-07-05 14:53:38.698 -06:00 [WRN] User 155b7949-1423-4009-aa3b-431a3ddb26ab failed to provide the correct password.
+2018-07-05 14:53:51.136 -06:00 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2018-07-05 14:53:51.314 -06:00 [DBG] Augmenting SignInContext
+2018-07-05 14:53:51.319 -06:00 [DBG] Adding idp claim with value: local
+2018-07-05 14:53:51.320 -06:00 [DBG] Adding amr claim with value: pwd
+2018-07-05 14:53:51.322 -06:00 [DBG] Adding auth_time claim with value: 1530824031
+2018-07-05 14:53:51.341 -06:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2018-07-05 14:53:51.353 -06:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-07-05 14:53:51.356 -06:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-07-05 14:53:51.399 -06:00 [DBG] 0 persisted grants found for 155b7949-1423-4009-aa3b-431a3ddb26ab
+2018-07-05 14:54:26.139 -06:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-07-05 14:54:26.141 -06:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-07-05 15:11:18.787 -06:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
+2018-07-05 15:11:18.789 -06:00 [INF] AuthenticationScheme: Identity.Application was successfully authenticated.
